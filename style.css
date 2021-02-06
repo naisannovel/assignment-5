@@ -1,0 +1,12 @@
+#search-inp{
+    width: 50%;
+    height: 45px;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+}
+#search-btn{
+    background-color: #F06C4E;
+    color: white;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
