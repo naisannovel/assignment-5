@@ -9,4 +9,39 @@
     color: white;
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
+    border: none;
+    padding: 0 30px;
+}
+.naisan{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 70px;
+}
+.cate{
+    text-align: center;
+    margin: 20px; 
+    border-radius: 15px;
+    box-shadow: 5px 5px 30px rgb(241, 239, 239);
+}
+.cate img{
+    border-radius: 15px;
+    width: 100%;
+}
+.cate h5{
+    background-color: #e9e9e9;
+    padding: 30px 0;
+}
+
+
+.novel{
+    background:crimson;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 300px;
+    
 }

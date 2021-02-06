@@ -4,14 +4,14 @@ fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
 
 
 function defaultCategories(data){
-    console.log(data.categories);
     let allCategories = data.categories
     allCategories.forEach(element => {
         let mainBox = document.getElementById('list-item')
         let newBox = document.createElement('div')
+        newBox.className = 'cate'
         let list = `
         <img src="${element.strCategoryThumb}">
-        <h4>${element.strCategory}</h4>
+        <h5>${element.strCategory}</h5>
         `
         newBox.innerHTML = list;
         mainBox.appendChild(newBox)
@@ -21,26 +21,35 @@ function defaultCategories(data){
 document.getElementById('search-btn').addEventListener('click',function(){
     let searchValue = document.getElementById('search-inp').value;
     
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
+    if(searchValue.length != 0){
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
     .then(response => response.json())
     .then(data => display(data))
+    }else{
+        alert('Search box are empty')
+    }
+    document.getElementById('search-inp').value = '';
 })
 
 function display(data){
     let cat = data.meals
+    if(cat != null){
     cat.forEach(element => {
         document.getElementById('list-item').style.display = 'none'
         let mainBox = document.getElementById('search-list-item')
         let newBox = document.createElement('div');
         let list = `
-        <div onclick="functionName('${element.strMeal}')">
+        <div class="cate" onclick="functionName('${element.strMeal}')">
         <img src="${element.strMealThumb}">
-        <h4>${element.strMeal}</h4>
+        <h5>${element.strMeal}</h5>
         </div>
         `
         newBox.innerHTML = list;
         mainBox.appendChild(newBox)
-    });
+    })
+}else{
+    alert('no food avileable')
+}
    
 }
 
