@@ -12,9 +12,9 @@
     border: none;
     padding: 0 30px;
 }
-.naisan{
+.search-list-item-style{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     margin-top: 70px;
 }
 .cate{
@@ -24,7 +24,9 @@
     box-shadow: 5px 5px 30px rgb(241, 239, 239);
 }
 .cate img{
-    border-radius: 15px;
+    /* border-radius: 15px; */
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
     width: 100%;
 }
 .cate h5{
