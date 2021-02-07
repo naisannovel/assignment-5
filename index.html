@@ -6,16 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- bootstrap -->
   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <!-- css -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- start nav -->
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <h1 class="navbar-brand" href="#">Hungry Monster</h1>
+      <h1 id="brand-icon" class="navbar-brand" href="#">Hungry Monster</h1>
 
       <div id="navbarNav">
         <ul class="navbar-nav">
@@ -36,18 +39,13 @@
     </div>
   </nav>
 
+  <!-- end nav -->
 
-
-
-
-
-
-
-
-
-
+  <!-- start main section -->
 
   <div class="container mt-5">
+
+    <!-- search input and button section -->
 
     <div id="search" class="d-flex justify-content-center">
       <input id="search-inp" class="form-control" type="text" placeholder="Search for Meal...">
@@ -55,21 +53,15 @@
     </div>
 
 
+    <!-- all search result section -->
 
-    <div id="search-list-item" class="search-list-item-style">
+    <div id="search-item-display" class="search-item">
 
     </div>
 
 
+    <!-- popup section -->
 
-
-
-    <!-- Button trigger modal -->
-    <!-- <div data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-   Launch static backdrop modal
-    </div> -->
-
-    <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -78,38 +70,31 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
 
-          <div id="modal-dynamic-body" class="modal-body">
+          <div id="popup" class="modal-body"></div> <!-- popup body -->
 
-          </div>
         </div>
       </div>
     </div>
 
 
 
+    <!-- not available meal section -->
 
-    <div id="noMeal" class="container">
-      <h3>no food availeable</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet earum sit, adipisci dolor voluptatem culpa. Consequuntur molestiae commodi saepe nulla impedit, ea officia tempore? Consectetur doloremque voluptate perferendis? Expedita quis veritatis aspernatur aperiam numquam dolore consequatur! Perferendis iste inventore voluptates quisquam ad tempore soluta asperiores, ullam, omnis facilis illum! Obcaecati.</p>
+    <div id="empty-search-result" class="container">
+      <img src="image/cat.png">
+      <h2>the meal you are searching for.</h2>
+      <h2>that is not in our store.</h2>
     </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
   </div>
 
+  <!-- end main section -->
 
 
+  <!-- javascript -->
   <script src="script.js"></script>
+  <!-- bootstrap js -->
   <script src="bootstrap/bootstrap.min.js"></script>
 </body>
 

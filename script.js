@@ -1,100 +1,83 @@
-
 // search meal
 
 document.getElementById('search-btn').addEventListener('click', function () {
     let searchValue = document.getElementById('search-inp').value;
-    document.getElementById('search-list-item').innerHTML = '';
+    document.getElementById('search-item-display').innerHTML = '';
+    document.getElementById('empty-search-result').style.display = 'none';
 
     if (searchValue.length != 0) {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
             .then(response => response.json())
-            .then(data => display(data)) //call another function. 
+            .then(data => searchResultDisplay(data)) //call another function. 
     } else {
         alert('Search box are empty')
     }
     document.getElementById('search-inp').value = '';
 })
 
-function display(data) {
-    let allMealElements = data.meals;
-    if (allMealElements != null) {
-        allMealElements.forEach(element => {
-            let mainUiBox = document.getElementById('search-list-item')
-            let newBox = document.createElement('div');
-            let list = `
-        <div class="cate" onclick="functionName('${element.strMeal}')" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        <img src="${element.strMealThumb}">
-        <h5>${element.strMeal}</h5>
-        </div>
-        `
-            newBox.innerHTML = list;
-            mainUiBox.appendChild(newBox);
+// declare searchResultDisplay function
+
+function searchResultDisplay(data) {
+    let allMealItems = data.meals; //data was an object.
+
+    if (allMealItems != null) {
+
+        allMealItems.forEach(element => {
+            
+            let searchResultDisplayMainBox = document.getElementById('search-item-display')
+            let newBoxElement = document.createElement('div');
+            let newElement = `
+                <div class="cate" onclick="popup('${element.strMeal}')" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <img src="${element.strMealThumb}">
+                <h5>${element.strMeal}</h5>
+                </div>
+                `;
+            newBoxElement.innerHTML = newElement;
+            searchResultDisplayMainBox.appendChild(newBoxElement);
 
         });
 
     } else {
-        // alert('no food available')
-        document.getElementById('noMeal').style.display = 'block';
+        document.getElementById('empty-search-result').style.display = 'block';
     }
 
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function functionName(nam) {
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${nam}`)
+function popup(mealName) {
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
         .then(response => response.json())
-        .then(data => displayB(data))
+        .then(data => popupDisplay(data))
 }
 
-function displayB(data) {
-    let element = data.meals;
-    let nov = element[0];
-    console.log(nov.strMealThumb);
-    let modalDisplay = `
-    <img src="${nov.strMealThumb}">
-    <h1>${nov.strMeal}</h1>
+function popupDisplay(data) {
+    let mealItems = data.meals[0]; //data was an object.
+    // let element = data.meals;
+
+    // let allMealItems = items[0];
+
+    let popupNewElement = `
+    <img src="${mealItems.strMealThumb}">
+    <h1>${mealItems.strMeal}</h1>
     <ul id="ingredient"></ul>
-    `
-    let mealThumb = document.getElementById('modal-dynamic-body');
-    mealThumb.innerHTML = modalDisplay;
+    `;
+
+    let popupSection = document.getElementById('popup');
+    popupSection.innerHTML = popupNewElement;
 
 
     for (let i = 1; i <= 20; i++) {
         const element = i;
-        let x = 'strIngredient' + i;
+        let ingredient = 'strIngredient' + i;
 
-        if (nov[x].length != 0) {
-            // console.log(nov[x]);
-            let li = document.createElement('li')
-            li.innerText = nov[x]
-            let ul = document.getElementById('ingredient');
-            ul.appendChild(li);
+        if (mealItems[ingredient].length != 0) {
+
+            let newListElement = document.createElement('li')
+
+            newListElement.innerText = mealItems[ingredient]
+            let popupUlElement = document.getElementById('ingredient');
+            popupUlElement.appendChild(newListElement);
         }
 
 
