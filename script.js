@@ -1,7 +1,9 @@
 // search meal
 
 document.getElementById('search-btn').addEventListener('click', function () {
+
     let searchValue = document.getElementById('search-inp').value;
+
     document.getElementById('search-item-display').innerHTML = '';
     document.getElementById('no-matching-section').style.display = 'none';
 
@@ -51,6 +53,8 @@ function popupBox(mealName) {
         .then(data => popupDisplay(data))
 }
 
+// declare popupDisplay function.
+
 function popupDisplay(data) {
     let mealItems = data.meals[0]; //data was an object.
 
@@ -66,7 +70,7 @@ function popupDisplay(data) {
 
 
     for (let i = 1; i <= 20; i++) {
-        const element = i;
+
         let ingredient = 'strIngredient' + i;
 
         if (mealItems[ingredient].length != 0) {
@@ -76,8 +80,5 @@ function popupDisplay(data) {
             let popupUlElement = document.getElementById('ingredient');
             popupUlElement.appendChild(newListElement);
         }
-
-
     }
-
 }

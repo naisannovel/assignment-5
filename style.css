@@ -31,7 +31,7 @@
 
 /* start search item result */
 
-.search-item {
+#search-item-display {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin-top: 70px;
@@ -65,10 +65,6 @@
     object-fit: cover;
 }
 
-#popup h4 {
-    text-align: center;
-}
-
 #popup-ingredient-title {
     margin: 20px 0;
 }
@@ -82,7 +78,7 @@
     padding-left: 1.3em;
 }
 
-#ingredient li:before {
+#ingredient li::before {
     content: "\f14a";
     display: inline-block;
     margin-left: -1.3em;
