@@ -33,7 +33,7 @@ function display(data) {
         });
 
     } else {
-        alert('no food avileable')
+        alert('no food available')
     }
 
 }
@@ -48,7 +48,14 @@ function functionName(nam) {
 function displayB(data) {
     let element = data.meals;
     let nov = element[0];
-    console.log(element[0]);
+    console.log(nov.strMealThumb);
+    let modalDisplay = `
+    <img src="${nov.strMealThumb}">
+    <h1>${nov.strMeal}</h1>
+    <ul id="ingredient"></ul>
+    `
+    let mealThumb = document.getElementById('modal-dynamic-body');
+    mealThumb.innerHTML = modalDisplay;
 
 
     for (let i = 1; i <= 20; i++) {
@@ -56,7 +63,11 @@ function displayB(data) {
         let x = 'strIngredient' + i;
 
         if (nov[x].length != 0) {
-            console.log(nov[x]);
+            // console.log(nov[x]);
+            let li = document.createElement('li')
+            li.innerText = nov[x]
+            let ul = document.getElementById('ingredient');
+            ul.appendChild(li);
         }
 
 
