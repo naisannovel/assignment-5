@@ -44,3 +44,7 @@
 #modal-dynamic-body h4{
     text-align: center;
 }
+#noMeal{
+    text-align: center;
+    display: none;
+}

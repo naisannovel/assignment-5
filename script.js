@@ -33,7 +33,8 @@ function display(data) {
         });
 
     } else {
-        alert('no food available')
+        // alert('no food available')
+        document.getElementById('noMeal').style.display = 'block';
     }
 
 }
