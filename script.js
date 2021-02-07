@@ -3,6 +3,7 @@
 
 document.getElementById('search-btn').addEventListener('click', function () {
     let searchValue = document.getElementById('search-inp').value;
+    document.getElementById('search-list-item').innerHTML = '';
 
     if (searchValue.length != 0) {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
@@ -15,8 +16,7 @@ document.getElementById('search-btn').addEventListener('click', function () {
 })
 
 function display(data) {
-    let allMealElements = data.meals
-    console.log(allMealElements);
+    let allMealElements = data.meals;
     if (allMealElements != null) {
         allMealElements.forEach(element => {
             let mainUiBox = document.getElementById('search-list-item')
@@ -37,6 +37,32 @@ function display(data) {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function functionName(nam) {
