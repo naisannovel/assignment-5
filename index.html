@@ -1,74 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <h1 class="navbar-brand" href="#">Hungry Monster</h1>
-          
-          <div id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Recipes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <h1 class="navbar-brand" href="#">Hungry Monster</h1>
 
+      <div id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="container mt-5">
+
+    <div id="search" class="d-flex justify-content-center">
+      <input id="search-inp" class="form-control" type="text" placeholder="Search for Meal...">
+      <button id="search-btn" class="btn btn-primary" type="button">Search</button>
+    </div>
 
     
 
-
-
-
-
-
-
-
-
-    <div class="container mt-5">
-
-        <div id="search" class="d-flex justify-content-center">
-            <input id="search-inp" class="form-control" type="text" placeholder="Search for Meal...">
-            <button id="search-btn" class="btn btn-primary" type="button">Search</button>
-        </div>
-    
-        <div id="list-item" class="naisan">
-
-        </div>
-
-        <div id="search-list-item" class="naisan">
-
-        </div>
-
-        <div class="novel">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi vel consequuntur quia in, atque magnam assumenda culpa. Suscipit impedit veniam nihil nobis consectetur quos reprehenderit! Natus culpa unde alias tempore.
-        </div>
+    <div id="search-list-item" class="naisan">
 
     </div>
-    
-    
 
-    <script src="script.js"></script>
-    <script src="bootstrap/bootstrap.min.js"></script>
+
+
+
+
+    <!-- Button trigger modal -->
+    <!-- <div data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</div> -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div id="modal-dynamic-body" class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+
+
+  <script src="script.js"></script>
+  <script src="bootstrap/bootstrap.min.js"></script>
 </body>
+
 </html>
