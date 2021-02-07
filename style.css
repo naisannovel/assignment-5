@@ -57,6 +57,8 @@
 
 /* end search item result */
 
+/* start popup section */
+
 #popup img {
     width: 100%;
     height: 350px;
@@ -66,28 +68,39 @@
 #popup h4 {
     text-align: center;
 }
-#popup-ingredient-title{
+
+#popup-ingredient-title {
     margin: 20px 0;
 }
-#ingredient{
+
+#ingredient {
     list-style: none;
     padding: 0;
 }
-#ingredient li{
+
+#ingredient li {
     padding-left: 1.3em;
 }
-#ingredient li:before{
+
+#ingredient li:before {
     content: "\f14a";
     display: inline-block;
     margin-left: -1.3em;
-    width: 1.3em; 
+    width: 1.3em;
 }
 
-#empty-search-result {
+/* start popup section */
+
+
+/* start no matching section */
+
+#no-matching-section {
     text-align: center;
     display: none;
 }
 
-#empty-search-result img {
+#no-matching-section img {
     width: 20%;
 }
+
+/* end no matching section */

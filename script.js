@@ -3,7 +3,7 @@
 document.getElementById('search-btn').addEventListener('click', function () {
     let searchValue = document.getElementById('search-inp').value;
     document.getElementById('search-item-display').innerHTML = '';
-    document.getElementById('empty-search-result').style.display = 'none';
+    document.getElementById('no-matching-section').style.display = 'none';
 
     if (searchValue.length != 0) {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
@@ -23,7 +23,7 @@ function searchResultDisplay(data) {
     if (allMealItems != null) {
 
         allMealItems.forEach(element => {
-            
+
             let searchResultDisplayMainBox = document.getElementById('search-item-display')
             let newBoxElement = document.createElement('div');
             let newElement = `
@@ -38,12 +38,12 @@ function searchResultDisplay(data) {
         });
 
     } else {
-        document.getElementById('empty-search-result').style.display = 'block';
+        document.getElementById('no-matching-section').style.display = 'block';
     }
 
 }
 
-
+// popup section.
 
 function popupBox(mealName) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
@@ -53,9 +53,6 @@ function popupBox(mealName) {
 
 function popupDisplay(data) {
     let mealItems = data.meals[0]; //data was an object.
-    // let element = data.meals;
-
-    // let allMealItems = items[0];
 
     let popupNewElement = `
     <img src="${mealItems.strMealThumb}">
