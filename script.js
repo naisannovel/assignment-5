@@ -61,7 +61,7 @@ function popupDisplay(data) {
     let popupNewElement = `
     <img src="${mealItems.strMealThumb}">
     <h1>${mealItems.strMeal}</h1>
-    <h6 id="popup-ingredient-title">ingredient</h6>
+    <h4 id="popup-ingredient-title">ingredient</h4>
     <ul id="ingredient"></ul>
     `;
 
