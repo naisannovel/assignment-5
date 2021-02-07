@@ -1,6 +1,6 @@
 // search meal
 
-document.getElementById('search-btn').addEventListener('click', function () {
+document.getElementById('search-btn').addEventListener('click', ()=> {
 
     let searchValue = document.getElementById('search-inp').value;
 
@@ -19,7 +19,7 @@ document.getElementById('search-btn').addEventListener('click', function () {
 
 // declare searchResultDisplay function
 
-function searchResultDisplay(data) {
+let searchResultDisplay = data => {
     let allMealItems = data.meals; //data was an object.
 
     if (allMealItems != null) {
@@ -47,7 +47,7 @@ function searchResultDisplay(data) {
 
 // popup section.
 
-function popupBox(mealName) {
+let popupBox = mealName => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
         .then(response => response.json())
         .then(data => popupDisplay(data))
@@ -55,7 +55,7 @@ function popupBox(mealName) {
 
 // declare popupDisplay function.
 
-function popupDisplay(data) {
+let popupDisplay = data => {
     let mealItems = data.meals[0]; //data was an object.
 
     let popupNewElement = `
