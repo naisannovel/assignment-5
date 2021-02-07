@@ -27,7 +27,7 @@ function searchResultDisplay(data) {
             let searchResultDisplayMainBox = document.getElementById('search-item-display')
             let newBoxElement = document.createElement('div');
             let newElement = `
-                <div class="cate" onclick="popup('${element.strMeal}')" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="result-item" onclick="popupBox('${element.strMeal}')" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 <img src="${element.strMealThumb}">
                 <h5>${element.strMeal}</h5>
                 </div>
@@ -45,7 +45,7 @@ function searchResultDisplay(data) {
 
 
 
-function popup(mealName) {
+function popupBox(mealName) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
         .then(response => response.json())
         .then(data => popupDisplay(data))
@@ -60,6 +60,7 @@ function popupDisplay(data) {
     let popupNewElement = `
     <img src="${mealItems.strMealThumb}">
     <h1>${mealItems.strMeal}</h1>
+    <h6 id="popup-ingredient-title">ingredient</h6>
     <ul id="ingredient"></ul>
     `;
 
@@ -74,8 +75,7 @@ function popupDisplay(data) {
         if (mealItems[ingredient].length != 0) {
 
             let newListElement = document.createElement('li')
-
-            newListElement.innerText = mealItems[ingredient]
+            newListElement.innerText = mealItems[ingredient];
             let popupUlElement = document.getElementById('ingredient');
             popupUlElement.appendChild(newListElement);
         }
